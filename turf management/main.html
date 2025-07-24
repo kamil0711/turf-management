@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  
+  <title>Turf Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="discoverplayer.html" />
+  <link rel="stylesheet" href="login.html" />
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-container">
+      <div class="logo">
+        <h1>Turf Hub</h1>
+        <p>Your gateway to sports turf bookings</p>
+      </div>
+      <nav class="header-nav">
+        <div><a href="#">Book</a></div>
+        <div><a href="discoverplayer.html">Discover Players</a></div>
+        <div><a href="login.html">Login</a> </div>
+      </nav>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#venues">Venues</a>
+    <a href="footer">About</a>
+    <a href="footer">Contact</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-text">
+      <div class="location-wrapper">
+        <i class=""></i>
+        <select class="location-select" onchange="updateLocationText(this)">
+          <option value="">Select Location</option>
+          <option value="Andheri">Andheri-East</option>
+          <option value="Bandra">Bandra</option>
+          <option value="Goregaon">Goregaon</option>
+          <option value="Borivali">Borivali</option>
+          <option value="Dadar">Dadar</option>
+          <option value="vashi">vashi</option>
+          <option value="sanatacruz">santacruz</option>
+          <option value="virar">virar</option>
+
+        </select>
+      </div>
+
+      <h1>FIND PLAYERS & VENUES NEARBY</h1>
+      <p>Seamlessly explore sports venues and play with sports enthusiasts just like you!</p>
+    </div>
+    <div class="hero-images">
+      <img src="images/basketball2.jpg" alt="Basketball">
+      <img src="images/badminton.jpg" alt="Badminton">
+      <img src="images/football.jpg" alt="Football">
+      <img src="images/cricket.jpg" alt="cricket">
+    </div>
+  </section>
+
+  <section class="venues" id="venues">
+    <h2>Available Venues</h2>
+    <div class="venue-rows">
+      <div class="venue-row">
+        <div class="venue">
+          <img src="images/badminton court.jpg" alt="Andheri">
+          <h3>Andheri Sports Arena</h3>
+          <p>Near Andheri Station, Mumbai</p>
+          <button onclick="bookVenue('Andheri Sports Arena')">Book Now</button>
+        </div>
+        <div class="venue">
+          <img src="images/basketball court.jpg" alt="Bandra">
+          <h3>Bandra Playzone</h3>
+          <p>Linking Road, Bandra West</p>
+          <button onclick="bookVenue('Bandra Playzone')">Book Now</button>
+        </div>
+        <div class="venue">
+          <img src="images/cricket court.jpg" alt="Juhu">
+          <h3>Juhu Beach Sports Club</h3>
+          <p>Near Juhu Beach, Mumbai</p>
+          <button onclick="bookVenue('Juhu Beach Sports Club')">Book Now</button>
+        </div>
+      </div>
+
+      <div class="venue-row">
+        <div class="venue">
+          <img src="images/football court.jpg" alt="Kandivali">
+          <h3>Kandivali Sports Hub</h3>
+          <p>Thakur Village, Kandivali East</p>
+          <button onclick="bookVenue('Kandivali Sports Hub')">Book Now</button>
+        </div>
+        <div class="venue">
+          <img src="images/football court 2.jpg" alt="Worli">
+          <h3>Worli Seaface Arena</h3>
+          <p>Worli Sea Face, Mumbai</p>
+          <button onclick="bookVenue('Worli Seaface Arena')">Book Now</button>
+        </div>
+        <div class="venue">
+          <img src="images/cricket 2.jpg" alt="Malad">
+          <h3>Malad Indoor Arena</h3>
+          <p>Inorbit Mall, Malad West</p>
+          <button onclick="bookVenue('Malad Indoor Arena')">Book Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Book Your Slot</h2>
+      <form id="bookingForm">
+        <label for="userName">Your Name:</label>
+        <input type="text" id="userName" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <label for="bookingDate">Date:</label>
+        <input type="date" id="bookingDate" required>
+
+        <label for="bookingTime">Time:</label>
+        <input type="time" id="bookingTime" required>
+
+        <label for="location">Venue:</label>
+        <input type="text" id="location" readonly>
+
+        <button type="submit">Confirm Booking</button>
+      </form>
+    </div>
+  </div>
+
+  <footer id="footer">
+    <p>&copy; 2025 Turf Hub. All rights reserved.</p>
+  </footer>
+
+
+</body>
+<script src="main.js"></script>
+
+</html>
