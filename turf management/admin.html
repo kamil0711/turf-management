@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html >
+<head>
+  
+  <title>Admin - Add Turf</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    .admin-container {
+      background-color: #fff;
+      padding: 30px;
+      max-width: 500px;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      color: #555;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      margin-top: 20px;
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-container">
+    <h2>Add New Turf</h2>
+    <form id="turfForm">
+      <label for="turfName">Turf Name</label>
+      <input type="text" id="turfName" required>
+
+      <label for="address">Address</label>
+      <textarea id="address" rows="3" required></textarea>
+
+      <label for="imageUrl">Image URL</label>
+      <input type="url" id="imageUrl" required>
+
+      <label for="price">Price per Hour (₹)</label>
+      <input type="number" id="price" required>
+
+      <button type="submit">Add Turf</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("turfForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("turfName").value;
+      const address = document.getElementById("address").value;
+      const imageUrl = document.getElementById("imageUrl").value;
+      const price = document.getElementById("price").value;
+
+      
+      alert(`✅ Turf Added!\n\nName: ${name}\nAddress: ${address}\nImage: ${imageUrl}\nPrice: ₹${price}`);
+
+      
+      this.reset();
+    });
+  </script>
+</body>
+</html>
